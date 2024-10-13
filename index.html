@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle Gráfico</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>    
+    <div class="border-top text-center">
+        <h1 class="mb-0">Faça seu cartão postal</h1>
+    </div>
+    
+    <div class="container mt-5">
+        <div class="row">          
+            <div class="col-md-4">
+                <h3>Controles</h3>
+                <form id="controlForm">
+                    <div class="form-group">
+                        <label for="bgColor">Cor de Fundo:</label>
+                        <input type="color" id="bgColor" class="form-control" value="#ffcc00">
+                    </div>
+                    <div class="form-group">
+                        <label for="borderColor">Cor da Borda:</label>
+                        <input type="color" id="borderColor" class="form-control" value="#333333">
+                    </div>
+                    <div class="form-group">
+                        <label for="textContent">Texto do Cartão:</label>
+                        <textarea id="textContent" class="form-control" rows="3" maxlength="50" placeholder="Digite o texto aqui"></textarea>
+                        <small id="charCount" class="form-text text-muted">Restam 50 caracteres</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="showText" checked>
+                        <label for="showText">Exibir texto no cartão</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="textColor">Cor do Texto:</label>
+                        <input type="color" id="textColor" class="form-control" value="#000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="signature">Assinatura:</label>
+                        <input type="text" id="signature" class="form-control" placeholder="Digite sua assinatura">
+                    </div>
+                    <div class="form-group">
+                        <label for="fontStyle">Fonte do Texto:</label>
+                        <select id="fontStyle" class="form-control">
+                            <option value="Arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Georgia">Georgia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardWidth">Largura do Cartão (px):</label>
+                        <input type="range" id="cardWidth" class="form-control-range" min="100" max="500" value="300">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardPosition">Posição do Cartão:</label>
+                        <select id="cardPosition" class="form-control">
+                            <option value="left">Esquerda</option>
+                            <option value="center">Centro</option>
+                            <option value="right">Direita</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardImage">Imagem do Cartão:</label>
+                        <input type="file" id="cardImage" class="form-control-file" accept="image/*">
+                        <small class="form-text text-muted">Selecione uma imagem para usar como fundo do cartão (máx: 500x500 px).</small>
+                    </div>
+                    <button type="button" id="removeImage" class="btn btn-danger mt-2">Remover Imagem</button>
+                </form>
+            </div>            
+            <div class="col-md-8">
+                <div id="cardContainer">
+                    <h3>Painel Gráfico</h3>
+                    <div id="card" class="card text-center">
+                        <div class="card-body">
+                            <p id="cardText">Texto de Exemplo</p>
+                            <p id="cardSignature" class="mt-4"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+    <div class="border-bottom text-center py-3">
+        <small>&copy; IFRS</small>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
